@@ -1,79 +1,137 @@
-h1 {
-    color: blue;
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif, sans-serif;
   }
-  h2 {
-    color: palevioletred;
+     
+  h1 {
+    text-align: center;
+    margin-top: 45px;
+    color: hsl(81, 89%, 43%);
+    border: #3dc2c2;
+  }
+     
+  #guess-input {
+    display: block;
+    margin: 0 auto 30px;
+    padding: 10px;
+    font-size: 18px;
+    width: 250px;
+    border: 2px solid #0cdb5b;
+  }
+     
+  #guess-button {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #479c5d;
+    color: #141412;
+    border: none;
+    border-radius: 10px;
+  }
+     
+  button:active {
+      transform: scale(0.95);
+  }
+     
+  .letter {
+      border: 1px solid rgb(52, 22, 221);
+      padding: 10px;
+      margin: 3px;
+      min-width: 20px;
+      text-align: center;
+      display: inline-block
+    
+  }
+     
+  .row{
+      margin-bottom: 10px;
+  }
+     
+  .input-area{
+      margin: 30px;
   }
   body {
-    font-family
-    margin: 0;
-    color: #3e363f;
-    padding-top: 70px;
-  }
-  nav {
-    background-color: #b9b0b5;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  }
-  .menu-item {
-    text-decoration: none;
-    color: #464949;
-    padding: 10px;
-    display: inline-block;
-  }
-  .menu-item:hover {
-    background-color: #ddd;
-    transition: all 0.4s ease-in-out;
-  }
-  header {
-    background-color: #1b1919;
-    color: #bea5a5;
-    text-align: center;
-    padding: 20px;
-    margin-bottom: 20px;
-  }
-  section {
-    padding: 20px;
-    border: 1px solid #5f3a3a;
-    margin-bottom: 20px;
-  }
-  #acerca-de-mi {
-    text-align: justify;
-  }
-  #habilidades ul {
-    list-style: none;
-    padding: 0;
+    --s: 25vmin;
+    --p: calc(var(--s) / 2);
+    --c1: pink;
+    --c2: dodgerblue;
+    --c3: white;
+    --bg: var(--c3);
+    --d: 4000ms;
+    --e: cubic-bezier(0.76, 0, 0.24, 1);
+    
+    background-color: var(--bg);
+    background-image:
+      linear-gradient(45deg, var(--c1) 25%, transparent 25%),
+      linear-gradient(-45deg, var(--c1) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, var(--c2) 75%),
+      linear-gradient(-45deg, transparent 75%, var(--c2) 75%);
+    background-size: var(--s) var(--s);
+    background-position: 
+      calc(var(--p) *  1) calc(var(--p) *  0), 
+      calc(var(--p) * -1) calc(var(--p) *  1), 
+      calc(var(--p) *  1) calc(var(--p) * -1), 
+      calc(var(--p) * -1) calc(var(--p) *  0);
+    animation: 
+      color var(--d) var(--e) infinite,
+      position var(--d) var(--e) infinite;
   }
   
-  #habilidades ul li {
-    display: inline-block;
-    padding: 5px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-right: 10px;
-  }
-  #sociales {
-    list-style: none;
-    padding: 0;
-    margin-top: 10px;
-  }
-  
-  #sociales li {
-    list-style: none;
-    display: inline-block;
-    padding: 5px;
+  @keyframes color {
+    0%, 25% {
+      --bg: var(--c3);
+    }
+    26%, 50% {
+      --bg: var(--c1);
+    }
+    51%, 75% {
+      --bg: var(--c3);
+    }
+    76%, 100% {
+      --bg: var(--c2);
+    }
   }
   
-  .fa {
-    color: #333;
-    text-decoration: none;
-    margin-left: 0px;
+  @keyframes position {
+    0% {
+      background-position: 
+        calc(var(--p) *  1) calc(var(--p) *  0), 
+        calc(var(--p) * -1) calc(var(--p) *  1), 
+        calc(var(--p) *  1) calc(var(--p) * -1), 
+        calc(var(--p) * -1) calc(var(--p) *  0);
+    }
+    25% {
+      background-position: 
+        calc(var(--p) *  1) calc(var(--p) *  4), 
+        calc(var(--p) * -1) calc(var(--p) *  5), 
+        calc(var(--p) *  1) calc(var(--p) *  3), 
+        calc(var(--p) * -1) calc(var(--p) *  4);
+    }
+    50% {
+      background-position: 
+        calc(var(--p) *  3) calc(var(--p) * 8), 
+        calc(var(--p) * -3) calc(var(--p) * 9), 
+        calc(var(--p) *  2) calc(var(--p) * 7), 
+        calc(var(--p) * -2) calc(var(--p) * 8);
+    }
+    75% {
+      background-position: 
+        calc(var(--p) *  3) calc(var(--p) * 12), 
+        calc(var(--p) * -3) calc(var(--p) * 13), 
+        calc(var(--p) *  2) calc(var(--p) * 11), 
+        calc(var(--p) * -2) calc(var(--p) * 12);
+    }
+    100% {    
+      background-position: 
+        calc(var(--p) *  5) calc(var(--p) * 16), 
+        calc(var(--p) * -5) calc(var(--p) * 17), 
+        calc(var(--p) *  5) calc(var(--p) * 15), 
+        calc(var(--p) * -5) calc(var(--p) * 16);
+    }
   }
   
-  footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
+  @media (prefers-reduced-motion) {
+    body {
+      animation: none;
+    }
   }
-  
-  
